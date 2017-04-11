@@ -7,7 +7,7 @@ class User
 
 	public function __construct()
 	{
-		$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE, PORT);
+		$this->db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
 		// Check Database connection
 		if(mysqli_connect_errno())
