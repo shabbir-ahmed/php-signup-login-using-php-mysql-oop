@@ -20,10 +20,57 @@ if(isset($_REQUEST['submit']))
 }
 ?>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!-- <style>
-            #container{width:400px; margin: 0 auto;}
-</style> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simple Login</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="container">
+	    <h1>Login Here</h1>
+		<form class="form-horizontal" action="" method="post" name="login">
+			<div class="form-group">
+			    <label class="col-sm-2 control-label">UserName or Email:</label>
+			    <div class="col-sm-3">
+			      <input type="text" class="form-control" name="emailusername" placeholder="UserName or Email" required>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Password</label>
+			    <div class="col-sm-3">
+			      <input type="password" class="form-control" name="password" placeholder="Password" required>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <div class="col-sm-2 col-sm-offset-2">
+			      <button onclick="return(submitlogin());" type="submit" name="submit" class="btn btn-default">Login</button>
+			      <br>
+			      <a href="signup.php">Register new user</a>
+			    </div>
+			  </div>
+		</form>
+	</div>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  </body>
+</html>
 
 <script type="text/javascript" language="javascript">
     function submitlogin() {
@@ -39,35 +86,3 @@ if(isset($_REQUEST['submit']))
 	}
 
 </script>
-
-<span style="font-family: 'Courier 10 Pitch', Courier, monospace; font-size: 13px; font-style: normal; line-height: 1.5;"><div id="container">
-</span>
-<h1>Login Here</h1>
-<form action="" method="post" name="login">
-	<table>
-		<tbody>
-			<tr>
-				<th>UserName or Email:</th>
-				<td><input type="text" name="emailusername" required="" /></td>
-			</tr>
-			<tr>
-				<th>Password:</th>
-				<td><input type="password" name="password" required="" /></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>
-					<input onclick="return(submitlogin());" type="submit" name="submit" value="Login" />
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td>
-					<a href="signup.php">Register new user</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-</form>
-</div>
-
