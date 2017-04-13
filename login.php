@@ -3,7 +3,7 @@ session_start();
 include_once 'include/UserClass.php';
 $user = new User();
 
-if(isset($_REQUEST['submit']))
+/*if(isset($_REQUEST['submit']))
 {
 	extract($_REQUEST);
 	$login = $user->check_login($emailusername, $password);
@@ -17,7 +17,7 @@ if(isset($_REQUEST['submit']))
 		// Registration faild
 		echo "Wrong user or password";
 	}
-}
+}*/
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +34,24 @@ if(isset($_REQUEST['submit']))
   </head>
   <body>
   	<div class="container">
+  		<?php
+  				if (isset($_REQUEST['submit'])) 
+				{
+					extract($_REQUEST);
+					$login = $user->check_login($emailusername, $password);
+					if($login)
+					{
+						// Login success
+						header("location:index.php");
+					}
+					else
+					{
+						?>
+							<p class="bg-danger" style="border-radius: 10px;margin-top: 20px;padding: 24px;">Wrong user or password</p>
+						<?php
+					}
+				}
+  			?>
 	    <h1>Login Here</h1>
 		<form class="form-horizontal" action="" method="post" name="login">
 			<div class="form-group">
